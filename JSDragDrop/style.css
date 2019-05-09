@@ -21,7 +21,7 @@ body {
 }
 .dragover {
     box-sizing: border-box;
-    border: 3px dashed silver;
+    border: 3px dashed black;
 }
 .invisible {
     opacity: 0.3;
