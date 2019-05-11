@@ -31,7 +31,7 @@ window.navigator.getUserMedia({
                 recVideo.src = window.URL.createObjectURL(blob);
                 downloadBtn.parentElement.style.display = 'block';
                 downloadBtn.parentElement.href = recVideo.src;
-
+                console.log(downloadBtn.parentElement, downloadBtn.parentElement.href);
             };
         },
         function(err){
