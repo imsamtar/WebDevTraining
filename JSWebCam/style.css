@@ -14,7 +14,15 @@ body > div {
     grid-template-rows: min-content 1fr;
     grid-gap: 10px;
 }
-body > div > button {
+/* button {
+    color: white;
+    text-decoration: none;
+} */
+a {
+    grid-column: span 2;
+}
+button {
+    width: 100%;
     grid-column: span 2;
     padding: 10px;
     font-weight: bold;
@@ -24,7 +32,7 @@ body > div > button {
     transition: 0.4s all;
     animation: fadin 1s;
 }
-body > div > button:hover {
+button:hover {
     background: #000000aa;
 }
 video {

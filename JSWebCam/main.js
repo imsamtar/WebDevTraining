@@ -2,6 +2,7 @@ const video = document.getElementById('video');
 const recVideo = document.getElementById('rec-video');
 const startRecBtn = document.getElementById('start-rec');
 const stopRecBtn = document.getElementById('stop-rec');
+const downloadBtn = document.getElementById('download');
 
 window.navigator.getUserMedia({
             // video: true
@@ -17,16 +18,20 @@ window.navigator.getUserMedia({
                 rec.start();
                 // console.log(startRecBtn.style.display);
                 startRecBtn.style.display='none';
-                stopRecBtn.style.display='block'
+                stopRecBtn.style.display='block';
             });
             stopRecBtn.addEventListener('click', () => {
                 rec.stop();
                 stopRecBtn.style.display='none';
-                startRecBtn.style.display='block'
+                startRecBtn.style.display='block';
             });
 
             rec.ondataavailable = ({data}) => {
-                recVideo.src = window.URL.createObjectURL(data);
+                let blob = new Blob([data], { 'type': 'video/mp4;' });
+                recVideo.src = window.URL.createObjectURL(blob);
+                downloadBtn.parentElement.style.display = 'block';
+                downloadBtn.parentElement.href = recVideo.src;
+
             };
         },
         function(err){
