@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        //Redirect to correct path so style.css & main.js loads correctly
+        let path = window.location.pathname;
+        if(path.indexOf('.html') == -1 && path[path.length - 1] != '/'){
+            window.location.pathname += '/';
+        }
+    </script>
+    <title>Web Dev Training</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: #00000088;
+            color: white;
+            font-size: 1.1rem;
+        }
+        a {
+            color: navy;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Exercises: </h1>
+    <ul style="list-style: decimal">
+        <li><a href="./JSDragDrop/">JSDragDrop</a></li>
+        <li><a href="./JSWebCam/">JSWebCam</a></li>
+    </ul>
+</body>
+</html>
