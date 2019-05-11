@@ -6,8 +6,10 @@ const downloadBtn = document.getElementById('download');
 
 window.navigator.getUserMedia({
             // video: true
+            // OR
             video: {
                 // height: 400
+                // width: 600
             }
         },
         function(stream){
@@ -16,7 +18,6 @@ window.navigator.getUserMedia({
 
             startRecBtn.addEventListener('click', () => {
                 rec.start();
-                // console.log(startRecBtn.style.display);
                 startRecBtn.style.display='none';
                 stopRecBtn.style.display='block';
             });
@@ -31,7 +32,6 @@ window.navigator.getUserMedia({
                 recVideo.src = window.URL.createObjectURL(blob);
                 downloadBtn.parentElement.style.display = 'block';
                 downloadBtn.parentElement.href = recVideo.src;
-                console.log(downloadBtn.parentElement, downloadBtn.parentElement.href);
             };
         },
         function(err){
