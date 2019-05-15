@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(rgb(151, 0, 0) 1px,blue) no-repeat;
+    min-height: 150vh;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffffaa;
+}
+form {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 700px;
+    margin: 100px auto;
+}
+form label {
+    width: 150px;
+    text-align: right;
+    margin: 10px 0px;
+    margin-top: 20px;
+}
+form input {
+    border: 0.5px solid;
+    border-radius: 5px;
+    width: calc(100% - 200px);
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 20px;
+    background: black;
+    color: white;
+}
+label[for=gender] ~ div {
+    width: calc(100% - 200px);
+    padding-top: 10px;
+}
+form input[type=radio]{
+    width: 15px;
+    border: 0;
+    transform: scale(2);
+    filter: invert(1);
+}
+form input[type=submit], form input[type=button]{
+    height: 30px;
+    background: black;
+    color: white;
+    font-size: 15px;
+}
+input:hover{ 
+    opacity: 0.8;
+}
+
+#records {
+    max-width: 700px;
+    margin: 100px auto;
+    padding-top: 100px;
+}
+#records > .record {
+
+    display: flex;
+    flex-flow: row wrap;
+}
+#records > .record {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    line-height: 20px;
+    color: gray;
+}
+#records > .record > label {
+    text-align: right;
+    width: 20%;
+}
+#records > .record > span {
+    width: 80%;
+    padding-left: 30px;
+}
