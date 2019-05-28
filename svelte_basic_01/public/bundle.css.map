@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../src/App.svelte",
+    "../src/Messages.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport Messages from './Messages.svelte';\n\n\tlet msgs = ['a', 'b', 'c'];\n\tlet newMsgText = '';\n\n\tfunction delMessage(event){\n\t\tlet index = event.detail.index;\n\t\tmsgs = msgs.filter(m => m!=msgs[index]);\n\t}\n\n\tfunction newMessage(e){\n\t\te.preventDefault();\n\t\tmsgs = [...msgs, newMsgText];\n\t\tnewMsgText = '';\n\t}\n\n\n</script>\n\n<style>\n\t#newMessage {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t}\n\t[type=submit] {\n\t\tbackground: #2a2a2a;\n\t\tcolor: #eeeeee;\n\t\tborder: 0;\n\t}\n\n</style>\n<form on:submit={newMessage}>\n\t<input type=\"text\" bind:value={newMsgText}>\n\t<input type=\"submit\">\n</form>\n<div style=\"display:flex\">\n\t<Messages msgs={msgs} i={1} on:delmsg={delMessage}/>\n\t<Messages msgs={msgs} i={2} on:delmsg={delMessage}/>\n</div>",
+    "<script>\n    import {createEventDispatcher} from 'svelte';\n\n    export let msgs;\n    export let i;\n\n    let dispatch = createEventDispatcher();\n    function deleteMessage(e){\n        let index = Number.parseInt(e.srcElement.id);\n        dispatch('delmsg', {\n            index\n        });\n    }\n</script>\n<style>\n    li {\n        margin: 10px;\n    }\n    li > font {\n        display: inline-block;\n        width: 100px;\n        font-size: 20px;\n    }\n    li > span {\n        display: inline-block;\n        width: 40px;\n        background: #ff0000aa;\n        color: white;\n        font-size: 30px;\n        cursor: pointer;\n        text-align: center;\n    }\n</style>\n<div style=\"width: 50%\">\n    <h1>Component # {i}</h1>\n    <ul>\n    {#each msgs as message, index}\n        <li><font>{message}</font> <span on:click={deleteMessage} id={index}>x</span></li>\n    {/each}\n    </ul>\n    <p>{msgs.length}</p>\n</div>"
+  ],
+  "names": [],
+  "mappings": "AAyBC,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACd,UAAU,CAAE,OAAO,CACnB,KAAK,CAAE,OAAO,CACd,MAAM,CAAE,CAAC,AACV,CAAC;ACdE,EAAE,eAAC,CAAC,AACA,MAAM,CAAE,IAAI,AAChB,CAAC,AACD,iBAAE,CAAG,IAAI,eAAC,CAAC,AACP,OAAO,CAAE,YAAY,CACrB,KAAK,CAAE,KAAK,CACZ,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,iBAAE,CAAG,IAAI,eAAC,CAAC,AACP,OAAO,CAAE,YAAY,CACrB,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,SAAS,CACrB,KAAK,CAAE,KAAK,CACZ,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,OAAO,CACf,UAAU,CAAE,MAAM,AACtB,CAAC"
+}
