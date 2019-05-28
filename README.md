@@ -1,3 +1,3 @@
 # WebDevTraining
 
-### Link: https://webdevcrow.github.io/WebDevTraining/
+### Link: https://imsamtar.github.io/WebDevTraining/
