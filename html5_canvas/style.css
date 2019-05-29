@@ -3,10 +3,13 @@ body {
     padding: 0;
     margin: 0;
 }
+canvas::-webkit-scrollbar {
+    display: none;
+}
 * {
     box-sizing: border-box;
 }
 canvas {
-    /* border: 5px solid gray; */
+    width: 100%;
     background: rgb(233, 233, 233);
 }

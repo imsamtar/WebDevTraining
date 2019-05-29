@@ -48,7 +48,7 @@ function getColor(c){
     colors[0]=(colors[0]+Math.random()*10)%255;
     colors[1]=(colors[1]+Math.random()*10)%255;
     colors[2]=(colors[2]+Math.random()*10)%255;
-    colors[3]=(Math.random() * 0.5) + 0.5;
+    colors[3]=1;// (Math.random() * 0.5) + 0.5;
     return `rgba(${colors[0]}, ${colors[1]}, ${colors[2]}, ${colors[3]})`;
 }
 
